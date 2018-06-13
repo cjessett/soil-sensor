@@ -1,9 +1,17 @@
 ## AWS-IOT ESP8266 device
 
-### Gettng Started
+### Getting Started
 
-#### Register an IOT thing with AWS
+#### Register a thing with AWS iot
 https://aws.amazon.com/iot-core/
+
+#### Download and convert cert and private key
+###### Convert PEM to DER format: (On Windowns you should download openssl first)
+`$ openssl x509 -in aaaaaaaaa-certificate.pem.crt.txt -out cert.der -outform DER`
+
+`$ openssl rsa -in aaaaaaaaaa-private.pem.key -out private.der -outform DER`
+###### Convert to binary
+`$ xxd -i <cert/key file in DER format>`
 
 #### Create a `secrets.h` file
 ```c
@@ -16,10 +24,11 @@ https://aws.amazon.com/iot-core/
 ```
 
 #### Upload the code with Arduino IDE
-#### Power the device
+
 #### Connect to the AP
 - Look for the wifi with an SSID like `ESP-<some id>`
 - Visit 192.168.4.1 in your browser
 - Input wifi credentials that the device can connect to
 
 #### See it update the device shadow
+The device will update the shadow, then deep sleep for 10 seconds.
