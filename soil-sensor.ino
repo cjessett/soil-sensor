@@ -50,9 +50,11 @@ void setup() {
   client.loop();
 
   char msg[50];
-  int value = random(30);
+  int val = 0;
 
-  snprintf (msg, 75, "{\"state\":{\"reported\": {\"moisture\":%ld}}}", value);
+  val = analogRead(0);
+
+  snprintf (msg, 75, "{\"state\":{\"reported\": {\"moisture\":%ld}}}", val);
   Serial.print("Publish message: ");
   Serial.println(msg);
 
