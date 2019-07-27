@@ -36,6 +36,7 @@ The device will update the shadow, then deep sleep for 10 seconds.
 #### BOM
 - [Adafruit Huzzah ESP8266](https://www.adafruit.com/product/2821)
 - [Sparkfun Soil Moisture Sensor](https://www.sparkfun.com/products/13322)
+- [Adafruit Half-sized Protoboard](https://www.adafruit.com/product/1609)
 
 ![sketch](soil-sensor-sketch.png)
 
